@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculadora</title>
+    <meta name="author" content="Laura Maribel Laime Asistiri">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--<fuentes> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Outfit:wght@300&family=Raleway&display=swap" rel="stylesheet">
+        <!--< 'Comfortaa'600 'Outfit'300 'Raleway'400  >-->
+    <!--<fin fuentes> --> 
+	<style type="text/css">
+		input[name="calculo"]{
+			margin-top: 8%;
+			width: 40px;
+		}
+		.container{
+			width: auto;
+			margin-right: auto;
+			margin-left: auto;
+			margin-bottom: 15px;
+			border: 1px solid #000;
+			padding:12px 17px 12px 17px;
+		}
+		.centro{
+			text-align: center;
+		}
+
+	</style>
+	<script type="text/javascript" language="javascript">
+
+		function suma(){
+			n1=document.formu.op1.value;
+			n2=document.formu.op2.value;
+			a=Number(n1);
+			b=Number(n2);
+			s=a+b;
+			document.formu.res.value=s;
+		}
+
+		function resta(){
+			n1=document.formu.op1.value;
+			n2=document.formu.op2.value;
+			a=parseFloat(n1);
+			b=parseFloat(n2);
+			r=a-b;
+			document.formu.res.value=r;
+		}
+		function multiplicacion(){
+			n1=document.formu.op1.value;
+			n2=document.formu.op2.value;
+			a=parseFloat(n1);
+			b=parseFloat(n2);
+			m=a*b;
+			document.formu.res.value=m;
+		}
+		function division(){
+			n1=document.formu.op1.value;
+			n2=document.formu.op2.value;
+			a=parseFloat(n1);
+			b=parseFloat(n2);
+			if(b==0){
+				document.formu.res.value="Imposible";
+			}
+			else{
+				d=a/b;
+				document.formu.res.value=d;
+			}
+		}
+		function factorial(){
+			n1=document.formu.op1.value;
+			a=parseFloat(n1);
+			m=1;
+			for (var i = 1 ; i <= a; i++) {
+				m*=i;
+			}
+			document.formu.res.value=m;
+		}
+		function exponencial(){
+			n1=document.formu.op1.value;
+			n2=document.formu.op2.value;
+			a=parseFloat(n1);
+			b=parseFloat(n2);
+			p=1;
+			while(b>0){
+				p*=a;
+				b--;
+			}
+			
+			document.formu.res.value=p;
+		}
+	</script>
+</head>
+<body>
+	<header>
+        <section id ="logo" style="background-color: palevioletred;"> 
+            <a href="index.html"><img src="img/logo.png" style="max-height: 100px; margin-top:10px;margin-bottom:10px;margin-left:10px;"></a>
+            <h1 style="float:right; margin-top:30px; padding-right: 2cm; color:white;" >Práctica Final INF-113</h1>
+        </section>
+    </header>
+	<div class="container" style="background-color: rosybrown; border-radius: 4%;">
+	<form name="formu" style="background-color:aquamarine">
+		<table border="0" align="center" cellspacing="0" cellpading="0" style="background-color:aquamarine">
+			<tr>
+					<div style="float: right;">
+						<td rowspan="4" style="width: 60px;">
+						<input type="button" name="calculo" value="+" onClick ="suma();"><br>
+						<input type="button" name="calculo" value="-" onClick="resta();"><br>
+						<input type="button" name="calculo" value="*" onClick="multiplicacion();"><br>
+						<input type="button" name="calculo" value="/" onClick="division();"><br>
+						<input type="button" name="calculo" value="!" onClick="factorial();"><br>
+						<input type="button" name="calculo" value="Exp" onClick="exponencial();"><br>
+					</div>
+				</td>
+				<td>X</td>
+				<td><input type="text" name="op1" style="height: 30px;"></td>
+			</tr>
+			<tr>
+				<td>Y</td>
+				<td><input type="text" name="op2" style="height: 30px;"></td>
+			</tr>
+			<tr>
+				<td>Res</td>
+				<td><input type="text" name="res" style="height: 30px;"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="centro">
+					<input type="button" name="borrar" value="Reset" onClick="reset();">
+				</td>
+			</tr>
+		</table>
+	</form>
+	</div>
+    <footer style="background-image: url(img/fondo1.jpg); background-size: cover;">
+        
+        <br><br><h5 style="text-align:center;">Laura Maribel Laime Asistiri, 7062279 L.P. &copy; 2021</h5><br><br>
+</footer>
+</body>
+</html>
